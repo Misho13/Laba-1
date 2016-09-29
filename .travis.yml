@@ -59,7 +59,7 @@ matrix:
 
 script:
 
-  - cd "Laba_1"
+  - cd Laba_1
 
   - cd build
 
