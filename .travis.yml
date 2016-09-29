@@ -1,66 +1,24 @@
 
-language: cpp
+language: generic
 
 matrix:
 
   include:
 
-    - os: windows
+    - os: osx
 
-      sudo: required
+      compiler: g++-5
 
-      env: COMPILER_NAME=gcc CXX=g++-5 CC=gcc-5
-
-      addons:
-
-        apt:
-
-          packages:
-
-            - g++-5
-
-            - cmake
-
-          sources: &sources
-
-            - llvm-toolchain-precise
-
-            - ubuntu-toolchain-r-test
-
-    - os: windows
-
-      sudo: required
-
-      env: COMPILER_NAME=gcc CXX=g++-4.9 CC=gcc-4.9
-
-      addons:
-
-        apt:
-
-          packages:
-
-            - g++-4.9
-
-            - cmake
-
-          sources: &sources
-
-            - llvm-toolchain-precise
-
-            - ubuntu-toolchain-r-test
-
-    - os: windows
-
-      compiler: clang-3.8
-
-      env: COMPILER=clang++ -std=c++11
+      env: COMPILER=g++ -std=c++11
 
 
 
 script:
 
-  - cd Laba_1
+  - cd "Laba_1" 
 
-  - cd build
+  - mkdir build1
+
+  - cd build1
 
   - cmake .. && make
